@@ -1,5 +1,7 @@
+[ ] Initial commit
 [ ] Add moved boxes colouring
 [ ] Add better victory message
+
 
 Hosting:
 [ ] Find webhosting
