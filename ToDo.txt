@@ -1,0 +1,12 @@
+[ ] Add moved boxes colouring
+[ ] Add better victory message
+
+Hosting:
+[ ] Find webhosting
+[ ] Find domain
+[ ] Choose site name
+
+
+Bugs:
+
+[] Reset moves not workingxs
