@@ -70,7 +70,7 @@ function shuffleGrid() {
         }
     }
 
-    // Perform exactly 5 random swaps
+    // Perform five random swaps
     const validSwaps = [];
     for (let i = 0; i < 5; i++) {
         const swap = swaps.splice(Math.floor(Math.random() * swaps.length), 1)[0];
@@ -80,8 +80,6 @@ function shuffleGrid() {
         const { r1, c1, r2, c2 } = swap;
         [currentGrid[r1][c1], currentGrid[r2][c2]] = [currentGrid[r2][c2], currentGrid[r1][c1]];
 
-        // Add swap to history for potential undo functionality
-        // history.push(swap);
     }
 
     updateGridDisplay();
@@ -115,7 +113,6 @@ function handleCellClick(cell) {
         movesLeft--;
         movesLeftElement.textContent = movesLeft;
 
-        console.log("Move:" + r1, c1, r2, c2);
         const move = [r1, c1, r2, c2]; 
         history.push(move);
 
@@ -181,11 +178,11 @@ function resetGame() {
 
 // Undo the last move
 function undoMove() {
-    console.log("undoMove - history.length:" + history.length);
+
     if (history.length === 0) return;
 
     const lastSwap = history.pop();
-    const { r1, c1, r2, c2 } = lastSwap;
+    const [ r1, c1, r2, c2 ] = lastSwap;
 
     // Reverse the swap
     [currentGrid[r1][c1], currentGrid[r2][c2]] = [currentGrid[r2][c2], currentGrid[r1][c1]];

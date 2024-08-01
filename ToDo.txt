@@ -1,14 +1,16 @@
-[ ] Initial commit
+[X] Initial commit
 [ ] Add moved boxes colouring
 [ ] Add better victory message
-
+[ ] Create word list
+[ ] Resize for mobile
+[X] Name game: Mixle
 
 Hosting:
-[ ] Find webhosting
-[ ] Find domain
-[ ] Choose site name
+[ ] Find webhosting - CLoudflare?
+[X] Find domain
+[X] Choose site name: stephendomican.com 
 
 
 Bugs:
 
-[] Reset moves not workingxs
+[X] Reset moves not working
