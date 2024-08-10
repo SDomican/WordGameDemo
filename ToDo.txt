@@ -4,6 +4,7 @@
 [ ] Create word list
 [ ] Resize for mobile
 [X] Name game: Mixle
+[ ] Look into adding wildcards (empty tiles player fills in).
 
 Hosting:
 [ ] Find webhosting - CLoudflare?
