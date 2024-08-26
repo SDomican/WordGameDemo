@@ -1,15 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; */
+
 }
 
 #game-container {
-    text-align: center;
+
 }
 
 #grid-controls-wrapper {
@@ -32,7 +33,7 @@ body {
 }
 
 .hint {
-    width: 200px; /* Adjust width as needed */
+    width: 400px; /* Adjust width as needed */
     font-size: 18px;
     text-align: left;
     padding-right: 10px;
@@ -78,12 +79,11 @@ body {
     font-weight: bold;
 }
 
-
-
 #message {
     font-size: 18px;
     color: green;
     margin: 10px 0; /* Space out from grid and controls */
+    text-align: center;
 }
 
 #controls {
