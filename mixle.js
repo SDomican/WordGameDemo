@@ -41,7 +41,9 @@ function initializeGame() {
     generateNewWords();
     createGrid();
     displayHints();
-    checkForCompletedRows(); // Check for completed rows right after creating the grid
+
+    // Check for completed rows right after creating the grid and reset game if it contains
+    if(checkForCompletedRows() === true) { initializeGame(); } 
 }
 
 // Generate new words and fill the grid
@@ -170,6 +172,8 @@ function checkForSolution() {
 
 // Check for completed rows and apply the appropriate styles
 function checkForCompletedRows() {
+    hasCompletedRow = false;
+
     // Iterate over each row and check if it is correct
     for (let rIndex = 0; rIndex < 4; rIndex++) {
         const rowCells = cells.filter(cell => parseInt(cell.dataset.row) === rIndex);
@@ -184,10 +188,13 @@ function checkForCompletedRows() {
             cell.classList.toggle('row-complete', allCorrect);
             if (allCorrect) {
                 cell.classList.add('correct'); // Add 'correct' class for individual cells
+                hasCompletedRow = true;
             } else {
                 cell.classList.remove('correct'); // Remove 'correct' class if the row is not complete
             }
         });
+
+        return hasCompletedRow;
     }
 }
 
