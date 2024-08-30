@@ -194,7 +194,7 @@ function checkForCompletedRows() {
             }
         });
 
-        return hasCompletedRow;
+        // return hasCompletedRow;
     }
 }
 
