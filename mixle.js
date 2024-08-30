@@ -42,8 +42,6 @@ function initializeGame() {
     createGrid();
     displayHints();
 
-    checkForCompletedRows()
-
     // Check for completed rows right after creating the grid and reset game if it contains
     if(checkForCompletedRows() === true) { initializeGame(); } 
 }
@@ -174,6 +172,7 @@ function checkForSolution() {
 
 // Check for completed rows and apply the appropriate styles
 function checkForCompletedRows() {
+
     hasCompletedRow = false;
 
     // Iterate over each row and check if it is correct
@@ -196,8 +195,8 @@ function checkForCompletedRows() {
             }
         });
 
-        // return hasCompletedRow;
     }
+    return hasCompletedRow;
 }
 
 // Reset the game to the initial state
