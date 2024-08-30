@@ -16,26 +16,31 @@ const hintArray = Object.values(wordDictionary);
 // Get an array of words from the dictionary
 const wordArray = Object.keys(wordDictionary);
 
-//Generate five random numbers
-let randomNumbers = GenerateRandomNumbers(4);
-
-
 // Get the value of the second item
 let secondValue = hintArray[1];
 
-const words = [wordArray[randomNumbers[0]], wordArray[randomNumbers[1]], wordArray[randomNumbers[2]], wordArray[randomNumbers[3]]];
-const hints = [hintArray[randomNumbers[0]], hintArray[randomNumbers[1]], hintArray[randomNumbers[2]], hintArray[randomNumbers[3]]];
-
-console.log(hints);
+let words = [];
+let hints = [];
 
 let history = []; // History of moves for undo functionality
 
 // Initialize the game
 function initializeGame() {
+
+    //Generate five random numbers
+    let randomNumbers = GenerateRandomNumbers(4);
+
+    console.log("intiializeGame");
     cells = [];
     history = [];
     movesLeft = 5;
     movesLeftElement.textContent = movesLeft;
+
+    words = [wordArray[randomNumbers[0]], wordArray[randomNumbers[1]], wordArray[randomNumbers[2]], wordArray[randomNumbers[3]]];
+    hints = [hintArray[randomNumbers[0]], hintArray[randomNumbers[1]], hintArray[randomNumbers[2]], hintArray[randomNumbers[3]]];
+
+    console.log("intiializeGameWords: " + words);
+    console.log("intiializeGameHints: " + hints);
 
     generateNewWords();
     createGrid();
@@ -45,9 +50,11 @@ function initializeGame() {
 
 // Generate new words and fill the grid
 function generateNewWords() {
+    console.log("generateNewWords");
     originalGrid = [];
     currentGrid = [];
     for (const word of words) {
+        console.log(word);
         originalGrid.push(word.split(''));
         currentGrid.push(word.split(''));
     }
@@ -218,7 +225,6 @@ function displayHints() {
     hintsContainer.innerHTML = '';
 
     hints.forEach((word, index) => {
-        console.log(word, index)
         const hint = document.createElement('div');
         hint.className = 'hint';
         hint.textContent = `Row ${index + 1}: ${word}`;
@@ -769,7 +775,7 @@ function GenerateDictionary(dictionary) {
     dictionary["gives"] = "Provides something to someone."
     dictionary["looks"] = "To direct your eyes toward something."
     dictionary["shape"] = "The external form or appearance of something."
-    dictionary["lives"] = "Exists or has life; also, the plural of life."
+    dictionary["lives"] = "Exists or has life."
     dictionary["steps"] = "Movements made by lifting and placing your feet; also, stages in a process."
     dictionary["areas"] = "Particular regions or spaces."
     dictionary["sense"] = "A faculty by which the body perceives external stimuli; also, meaning or understanding."
@@ -807,8 +813,8 @@ function GenerateDictionary(dictionary) {
     dictionary["spoke"] = "The past tense of 'speak'; also, part of a wheel."
     dictionary["break"] = "To separate into pieces; also, a pause from work or activity."
     dictionary["cause"] = "Something that brings about an effect; also, a reason for something happening."
-    dictionary["weeks"] = "Plural of week; a period of seven days."
-    dictionary["lands"] = "Plural of land; areas of ground; also, to arrive on solid ground."
+    dictionary["weeks"] = "A period of seven days."
+    dictionary["lands"] = "Areas of ground; also, to arrive on solid ground."
     dictionary["basic"] = "Fundamental or essential; the starting point."
     dictionary["liked"] = "Enjoyed or preferred something."
     dictionary["trade"] = "The action of buying and selling goods or services; also, an occupation."
@@ -820,7 +826,7 @@ function GenerateDictionary(dictionary) {
     dictionary["local"] = "Related to a specific area or community."
     dictionary["waxes"] = "Substances used to polish or seal; also, to grow in size or intensity."
     dictionary["knows"] = "The present tense of 'know'; has knowledge or awareness."
-    dictionary["homes"] = "Plural of home; places where people live."
+    dictionary["homes"] = "Places where people live."
     dictionary["teeth"] = "Hard structures in the mouth used for biting and chewing."
     dictionary["coast"] = "The land next to the sea; also, to move easily without much effort."
     dictionary["thick"] = "Having a large distance between opposite sides; dense."
