@@ -42,6 +42,8 @@ function initializeGame() {
     createGrid();
     displayHints();
 
+    checkForCompletedRows()
+
     // Check for completed rows right after creating the grid and reset game if it contains
     if(checkForCompletedRows() === true) { initializeGame(); } 
 }
