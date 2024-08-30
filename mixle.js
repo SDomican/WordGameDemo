@@ -2,7 +2,7 @@ const grid = document.getElementById('grid');
 const hintsContainer = document.getElementById('hints');
 const movesLeftElement = document.getElementById('moves-left');
 let selectedCell = null;
-let movesLeft = 5;
+let movesLeft;
 let cells = [];
 let originalGrid = [];
 let currentGrid = [];
@@ -30,17 +30,13 @@ function initializeGame() {
     //Generate five random numbers
     let randomNumbers = GenerateRandomNumbers(4);
 
-    console.log("intiializeGame");
     cells = [];
     history = [];
-    movesLeft = 5;
+    movesLeft = 6;
     movesLeftElement.textContent = movesLeft;
 
     words = [wordArray[randomNumbers[0]], wordArray[randomNumbers[1]], wordArray[randomNumbers[2]], wordArray[randomNumbers[3]]];
     hints = [hintArray[randomNumbers[0]], hintArray[randomNumbers[1]], hintArray[randomNumbers[2]], hintArray[randomNumbers[3]]];
-
-    console.log("intiializeGameWords: " + words);
-    console.log("intiializeGameHints: " + hints);
 
     generateNewWords();
     createGrid();
@@ -50,11 +46,9 @@ function initializeGame() {
 
 // Generate new words and fill the grid
 function generateNewWords() {
-    console.log("generateNewWords");
     originalGrid = [];
     currentGrid = [];
     for (const word of words) {
-        console.log(word);
         originalGrid.push(word.split(''));
         currentGrid.push(word.split(''));
     }
@@ -98,11 +92,9 @@ function shuffleGrid() {
         }
     }
 
-    // Perform five random swaps
-    const validSwaps = [];
-    for (let i = 0; i < 5; i++) {
+    // Perform six swaps
+    for (let i = 0; i < 6; i++) {
         const swap = swaps.splice(Math.floor(Math.random() * swaps.length), 1)[0];
-        validSwaps.push(swap);
 
         // Swap in the currentGrid
         const { r1, c1, r2, c2 } = swap;
@@ -2034,7 +2026,6 @@ function GenerateDictionary(dictionary) {
     dictionary["fares"] = "The price of a journey; also, the range of food available."
     dictionary["dodge"] = "To avoid or evade; also, a quick, sudden movement."
     dictionary["godly"] = "Relating to gods or deities; also, exhibiting qualities attributed to gods."
-    dictionary["squaw"] = "An outdated term for an Indigenous woman; also, a term that is now considered offensive."
     dictionary["affix"] = "To attach or fasten; also, a prefix or suffix added to a word."
     dictionary["brute"] = "A violent or beastly person; also, characterized by physical strength."
     dictionary["nicer"] = "More pleasant or kind."
