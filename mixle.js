@@ -1731,7 +1731,7 @@ function GenerateDictionary(dictionary) {
     dictionary["teens"] = "The age group from 13 to 19."
     dictionary["crank"] = "A handle used to turn a machine; also, to turn or move with a crank."
     dictionary["hedge"] = "A fence made of shrubs; also, to avoid or protect oneself."
-    dictionary["genes"] = "Units of heredity in biologye."
+    dictionary["genes"] = "Units of heredity in biology."
     dictionary["sober"] = "Not intoxicated; also, serious or solemn in demeanor."
     dictionary["boast"] = "To talk about one's achievements proudly; also, to brag."
     dictionary["tract"] = "An area of land or a system of organs; also, a pamphlet or booklet."
